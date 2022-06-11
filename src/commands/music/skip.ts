@@ -1,15 +1,15 @@
 import { SlashCommandBuilder } from '@discordjs/builders';
 import { Client, CommandInteraction } from 'discord.js';
-import { forceExit } from './queue';
+import { skip } from './queue';
 // Rembember to add the export for this command to commands/index.ts
 
 /**
  * Command Details
  */
 export const data = new SlashCommandBuilder()
-  .setName(`stop`)
+  .setName(`skip`)
   .setDescription(
-    `Stop any music currently playing and force the bot to leave the voice channel`
+    `Skip the currently playing song and move on to the next in queue.`
   );
 
 /**
@@ -28,13 +28,7 @@ export const execute = (interaction: CommandInteraction, client: Client) => {
     );
   }
 
-  if (guild?.id) {
-    forceExit(guild.id);
-  } else {
-    return interaction.reply(
-      `Something went wrong. I was unable to end playback.`
-    );
-  }
+  skip();
 
-  return interaction.reply(`You got it! Stopping playback!`);
+  return interaction.reply(`Skipped the current song!`);
 };

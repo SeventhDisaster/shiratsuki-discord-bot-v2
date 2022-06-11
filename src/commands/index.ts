@@ -3,3 +3,7 @@ export * as help from './support/help';
 export * as sevfact from './conversation/sevfact';
 export * as play from './music/play';
 export * as stop from './music/stop';
+export * as skip from './music/skip';
+export * as queue from './music/queue';
+export * as song from './music/song';
+export * as shuffle from './music/shuffle';

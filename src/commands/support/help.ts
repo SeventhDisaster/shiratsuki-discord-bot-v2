@@ -73,6 +73,12 @@ const commandList: { [key: string]: CommandListItem[] } = {
       name: 'queue',
       description: 'Display the next couple of songs in the queue.'
     }
+  ],
+  CONVERSATION: [
+    {
+      name: 'sevfact',
+      description: 'Learn a something about my developer!'
+    }
   ]
 };
 
@@ -80,6 +86,8 @@ const getEmojiFromKey = (key: string): string => {
   switch (key) {
     case 'MUSIC':
       return '🎵';
+    case 'CONVERSATION':
+      return '💬';
     default:
       return '❔';
   }

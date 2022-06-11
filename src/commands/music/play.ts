@@ -55,12 +55,6 @@ const retrieveSongs = async (interaction: CommandInteraction, url: string) => {
   }
 };
 
-const handleQueue = (
-  interaction: CommandInteraction,
-  client: Client,
-  songs: Song[]
-) => {};
-
 /**
  * Command Action and Reply
  */
@@ -118,7 +112,8 @@ export const execute = (interaction: CommandInteraction, client: Client) => {
                 createEmbed({
                   title: `Music`,
                   description: `Queueing **${songs.length}** songs, starting with **${songs[0]?.title}**!`,
-                  thumbnailUrl: songs[0]?.url,
+                  thumbnailUrl: songs[0]?.thumbnail || '',
+                  url: songs[0].url,
                   color: `#87b5ff`,
                   footer: {
                     text: `白月 - Shiratsuki - Music Controller V2.5`
@@ -132,7 +127,8 @@ export const execute = (interaction: CommandInteraction, client: Client) => {
                 createEmbed({
                   title: `Music`,
                   description: `Now playing: **${songs[0]?.title}**!`,
-                  thumbnailUrl: songs[0]?.url,
+                  thumbnailUrl: songs[0]?.thumbnail || '',
+                  url: songs[0]?.url,
                   color: `#87b5ff`,
                   footer: {
                     text: `白月 - Shiratsuki - Music Controller V2.5`
@@ -158,7 +154,8 @@ export const execute = (interaction: CommandInteraction, client: Client) => {
               createEmbed({
                 title: `Music`,
                 description: `Adding **${songs.length}** more songs to the queue, starting with **${songs[0]?.title}**!`,
-                thumbnailUrl: songs[0]?.url,
+                thumbnailUrl: songs[0].thumbnail || '',
+                url: songs[0]?.url,
                 color: `#87b5ff`,
                 footer: {
                   text: `白月 - Shiratsuki - Music Controller V2.5`
@@ -173,7 +170,8 @@ export const execute = (interaction: CommandInteraction, client: Client) => {
               createEmbed({
                 title: `Music`,
                 description: `Added song to queue: **${songs[0]?.title}**!`,
-                thumbnailUrl: songs[0]?.url,
+                thumbnailUrl: songs[0]?.thumbnail || '',
+                url: songs[0]?.url,
                 color: `#87b5ff`,
                 footer: {
                   text: `白月 - Shiratsuki - Music Controller V2.5`
