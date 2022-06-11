@@ -87,10 +87,3 @@ const sevfactResponses = [
   'He owns a PS5 controller but not an actual PS5',
   "He's ok I guess."
 ];
-
-const getSevFact = () => {
-  let rand = Math.floor(Math.random() * sevfactResponses.length);
-  return `**Sev fact:** ${sevfactResponses[rand]}`;
-};
-
-module.exports = { getSevFact };
