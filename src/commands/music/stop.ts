@@ -9,8 +9,9 @@ import { forceExit } from './queue';
 export const data = new SlashCommandBuilder()
   .setName(`stop`)
   .setDescription(
-    `Stop any music currently playing and force the bot to leave the voice channel`
+    `Stop any music currently playing and force 白月 Shiratsuki to leave the voice channel`
   );
+export const global = true;
 
 /**
  * Command Action and Reply
@@ -36,5 +37,5 @@ export const execute = (interaction: CommandInteraction, client: Client) => {
     );
   }
 
-  return interaction.reply(`You got it! Stopping playback!`);
+  return interaction.reply(`かしこまりました！ Stopping playback! 🔇`);
 };

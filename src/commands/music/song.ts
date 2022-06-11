@@ -10,8 +10,8 @@ import { queue } from './queue';
  */
 export const data = new SlashCommandBuilder()
   .setName(`song`)
-  .setDescription(`Display the currently playing song`);
-
+  .setDescription(`Display 白月 Shiratsuki's currently playing song`);
+export const global = true;
 /**
  * Command Action and Reply
  */
@@ -36,12 +36,12 @@ export const execute = (interaction: CommandInteraction, client: Client) => {
     embeds: [
       createEmbed({
         title: `Music`,
-        description: `Currently Playing **${song.title}**!`,
+        description: `Currently Playing **${song.title}**! 🎵`,
         thumbnailUrl: song.thumbnail || '',
         url: song.url,
         color: `#87b5ff`,
         footer: {
-          text: `白月 - Shiratsuki - Music Controller V2.5`
+          text: `白月 - Shiratsuki - Music Controller V3`
         }
       })
     ]

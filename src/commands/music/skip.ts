@@ -9,8 +9,9 @@ import { skip } from './queue';
 export const data = new SlashCommandBuilder()
   .setName(`skip`)
   .setDescription(
-    `Skip the currently playing song and move on to the next in queue.`
+    `Skip the currently playing song and move on to the next in 白月 Shiratsuki's queue.`
   );
+export const global = true;
 
 /**
  * Command Action and Reply
@@ -30,5 +31,5 @@ export const execute = (interaction: CommandInteraction, client: Client) => {
 
   skip();
 
-  return interaction.reply(`Skipped the current song!`);
+  return interaction.reply(`Skipped the current song! ⏭️`);
 };

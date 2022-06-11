@@ -21,7 +21,7 @@ const commands: Omit<
 >[] = [];
 
 for (const module of Object.values<Command>(commandModules)) {
-  if (!module.global) {
+  if (module.global) {
     commands.push(module.data);
   }
 }
@@ -29,11 +29,11 @@ for (const module of Object.values<Command>(commandModules)) {
 const rest = new REST({ version: '10' }).setToken(config.DISCORD_TOKEN);
 
 rest
-  .put(Routes.applicationGuildCommands(config.CLIENT_ID, config.GUILD_ID), {
+  .put(Routes.applicationCommands(config.CLIENT_ID), {
     body: commands
   })
   .then(() => {
-    console.log('Successfully registered application commands!');
+    console.log('Successfully registered global application commands!');
   })
   .catch((error) => {
     console.error(error);

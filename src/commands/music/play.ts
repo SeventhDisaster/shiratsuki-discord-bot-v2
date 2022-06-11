@@ -13,7 +13,7 @@ import { player, queue, QueueEntry, Song } from './queue';
 export const data = new SlashCommandBuilder()
   .setName(`play`)
   .setDescription(
-    `Play or queue the audio from a youtube video or queue a playlist in your voice channel.`
+    `Play or queue audio from a youtube video or playlist through 白月 Shiratsuki in your voice channel.`
   )
   .addStringOption((option) =>
     option
@@ -21,6 +21,7 @@ export const data = new SlashCommandBuilder()
       .setDescription('The video / playlist url')
       .setRequired(true)
   );
+export const global = true;
 
 const retrieveSongs = async (interaction: CommandInteraction, url: string) => {
   // Determine chosen song
@@ -110,13 +111,13 @@ export const execute = (interaction: CommandInteraction, client: Client) => {
             return interaction.reply({
               embeds: [
                 createEmbed({
-                  title: `Music`,
+                  title: `Music 🎵`,
                   description: `Queueing **${songs.length}** songs, starting with **${songs[0]?.title}**!`,
                   thumbnailUrl: songs[0]?.thumbnail || '',
                   url: songs[0].url,
                   color: `#87b5ff`,
                   footer: {
-                    text: `白月 - Shiratsuki - Music Controller V2.5`
+                    text: `白月 - Shiratsuki - Music Controller V3`
                   }
                 })
               ]
@@ -125,13 +126,13 @@ export const execute = (interaction: CommandInteraction, client: Client) => {
             return interaction.reply({
               embeds: [
                 createEmbed({
-                  title: `Music`,
+                  title: `Music 🎵`,
                   description: `Now playing: **${songs[0]?.title}**!`,
                   thumbnailUrl: songs[0]?.thumbnail || '',
                   url: songs[0]?.url,
                   color: `#87b5ff`,
                   footer: {
-                    text: `白月 - Shiratsuki - Music Controller V2.5`
+                    text: `白月 - Shiratsuki - Music Controller V3`
                   }
                 })
               ]
@@ -152,13 +153,13 @@ export const execute = (interaction: CommandInteraction, client: Client) => {
           return interaction.reply({
             embeds: [
               createEmbed({
-                title: `Music`,
+                title: `Music 🎵`,
                 description: `Adding **${songs.length}** more songs to the queue, starting with **${songs[0]?.title}**!`,
                 thumbnailUrl: songs[0].thumbnail || '',
                 url: songs[0]?.url,
                 color: `#87b5ff`,
                 footer: {
-                  text: `白月 - Shiratsuki - Music Controller V2.5`
+                  text: `白月 - Shiratsuki - Music Controller V3`
                 }
               })
             ]
@@ -168,13 +169,13 @@ export const execute = (interaction: CommandInteraction, client: Client) => {
           return interaction.reply({
             embeds: [
               createEmbed({
-                title: `Music`,
+                title: `Music 🎵`,
                 description: `Added song to queue: **${songs[0]?.title}**!`,
                 thumbnailUrl: songs[0]?.thumbnail || '',
                 url: songs[0]?.url,
                 color: `#87b5ff`,
                 footer: {
-                  text: `白月 - Shiratsuki - Music Controller V2.5`
+                  text: `白月 - Shiratsuki - Music Controller V3`
                 }
               })
             ]

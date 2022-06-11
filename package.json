@@ -8,6 +8,7 @@
     "start": "node build/index.js",
     "dev": "concurrently \"tsc -w\" \"nodemon build/index.js\"",
     "deploy:commands": "tsc && node build/deploy-commands.js",
+    "publish:commands": "tsc && node build/global-commands.js",
     "prepare": "husky install"
   },
   "keywords": [],

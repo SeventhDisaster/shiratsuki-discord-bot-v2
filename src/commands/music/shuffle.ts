@@ -8,7 +8,10 @@ import { queue, QueueEntry, Song } from './queue';
  */
 export const data = new SlashCommandBuilder()
   .setName(`shuffle`)
-  .setDescription(`Randomizes the order of the songs currently in queue!`);
+  .setDescription(
+    `Randomizes the order of the songs currently in 白月 Shiratsuki's queue!`
+  );
+export const global = true;
 
 const shuffleSongs = (songs: Song[]): Song[] => {
   for (let i = songs.length - 1; i > 0; i--) {
@@ -55,5 +58,5 @@ export const execute = (interaction: CommandInteraction, client: Client) => {
   };
   queue.set(guild.id, updatedEntry);
 
-  return interaction.reply(`Songs in the queue have been shuffled! 🎵`);
+  return interaction.reply(`Songs in the queue have been shuffled! 🔀`);
 };

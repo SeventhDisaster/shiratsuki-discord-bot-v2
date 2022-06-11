@@ -99,7 +99,7 @@ export const skip = async () => {
  */
 export const data = new SlashCommandBuilder()
   .setName(`queue`)
-  .setDescription(`Show what is currently in the music queue`)
+  .setDescription(`Show what is currently in 白月 Shiratsuki's music queue`)
   .addNumberOption((number) =>
     number
       .setName(`amount`)
@@ -108,6 +108,7 @@ export const data = new SlashCommandBuilder()
       .setMaxValue(10)
       .setRequired(false)
   );
+export const global = true;
 
 /**
  * Command Action and Reply
@@ -135,13 +136,13 @@ export const execute = (interaction: CommandInteraction, client: Client) => {
     return interaction.reply({
       embeds: [
         createEmbed({
-          title: `Music Queue: (**${songs.length}** song)`,
+          title: `Music Queue: (**${songs.length}** song) 🎵`,
           description: `Currently Playing **${songs[0]?.title}**! This is the last song in the queue.`,
           thumbnailUrl: songs[0]?.thumbnail || '',
           url: songs[0]?.url,
           color: `#87b5ff`,
           footer: {
-            text: `白月 - Shiratsuki - Music Controller V2.5`
+            text: `白月 - Shiratsuki - Music Controller V3`
           }
         })
       ]
@@ -158,14 +159,14 @@ export const execute = (interaction: CommandInteraction, client: Client) => {
     return interaction.reply({
       embeds: [
         createEmbed({
-          title: `Music Queue: (**${songs.length}** songs)`,
+          title: `Music Queue: (**${songs.length}** songs) 🎵`,
           description: `Currently Playing **[${songs[0].title}](${songs[0].url})**!`,
           thumbnailUrl: songs[0]?.thumbnail || '',
           url: songs[0]?.url,
           color: `#87b5ff`,
           fields: queueFields,
           footer: {
-            text: `白月 - Shiratsuki - Music Controller V2.5`
+            text: `白月 - Shiratsuki - Music Controller V3`
           }
         })
       ]

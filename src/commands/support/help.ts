@@ -8,13 +8,13 @@ import { createEmbed } from '../../util/embeds';
  */
 export const data = new SlashCommandBuilder()
   .setName(`help`)
-  .setDescription(`Informs the user about available commands.`)
+  .setDescription(
+    `Informs the user about 白月 Shiratsuki's available commands.`
+  )
   .addStringOption((option) =>
     option
       .setName('category')
-      .setDescription(
-        'Which category of commands do you want to know more about?'
-      )
+      .setDescription('Choose a category to limit the size of the help command')
       .setRequired(false)
       .setChoices(
         {
@@ -31,6 +31,7 @@ export const data = new SlashCommandBuilder()
         }
       )
   );
+export const global = true;
 
 /* HELP COMMAND CONTENTS */
 type CommandListItem = {
@@ -72,9 +73,13 @@ const commandList: { [key: string]: CommandListItem[] } = {
     {
       name: 'queue',
       description: 'Display the next couple of songs in the queue.'
+    },
+    {
+      name: 'shuffle',
+      description: 'Shuffle the songs in the music queue.'
     }
   ],
-  CONVERSATION: [
+  CHAT: [
     {
       name: 'sevfact',
       description: 'Learn a something about my developer!'
@@ -86,7 +91,7 @@ const getEmojiFromKey = (key: string): string => {
   switch (key) {
     case 'MUSIC':
       return '🎵';
-    case 'CONVERSATION':
+    case 'CHAT':
       return '💬';
     default:
       return '❔';
@@ -114,7 +119,7 @@ export const execute = (interaction: CommandInteraction, client: Client) => {
     let categoryCommands = commandList[option || 'DEFAULT'];
     for (const command of categoryCommands) {
       fieldList.push({
-        name: `${getEmojiFromKey(option || 'DEFAULT')} - ${command.name}`,
+        name: `${getEmojiFromKey(option || 'DEFAULT')} ${command.name}`,
         value: `${command.description}`
       });
     }
