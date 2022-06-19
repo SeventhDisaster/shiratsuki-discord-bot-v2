@@ -152,7 +152,8 @@ export const execute = (interaction: CommandInteraction, client: Client) => {
     for (let i = 1; i <= amountToDisplay && i < songs.length; i++) {
       queueFields.push({
         name: `${i === 1 ? 'Next:' : i + '#'} ${songs[i].title}`,
-        value: `Requested by ${songs[i].requestedBy} ~ [(${songs[i].duration}) - View on Youtube](${songs[i].url})`
+        value: `Requested by ${songs[i].requestedBy} ~ [(${songs[i].duration}) - View on Youtube](${songs[i].url})`,
+        inline: false
       });
     }
 
