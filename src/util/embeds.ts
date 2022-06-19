@@ -1,4 +1,4 @@
-import { MessageEmbed } from 'discord.js';
+import { MessageAttachment, MessageEmbed } from 'discord.js';
 import { Embed } from '../types/embed.types';
 
 /**
@@ -15,7 +15,7 @@ export const createEmbed = (embedInfo: Embed): MessageEmbed => {
 
   embedInfo.description && embed.setDescription(embedInfo.description);
   embedInfo.thumbnailUrl && embed.setThumbnail(embedInfo.thumbnailUrl);
-  embedInfo.imageUrl && embed.setImage(embedInfo.imageUrl);
+  embedInfo.imageUrl && embed.setImage(`attachment://${embedInfo.imageUrl}`);
   embedInfo.fields && embed.addFields(embedInfo.fields);
   embedInfo.url && embed.setURL(embedInfo.url);
   embedInfo.author && embed.setAuthor(embedInfo.author);
