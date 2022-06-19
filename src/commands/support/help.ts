@@ -49,6 +49,10 @@ const commandList: { [key: string]: CommandListItem[] } = {
       name: 'help',
       description:
         'Display this prompt, showing information about available commands.'
+    },
+    {
+      name: 'avatar',
+      description: `Lets you display a larger version of a user's profile picture.`
     }
   ],
   MUSIC: [
@@ -81,8 +85,8 @@ const commandList: { [key: string]: CommandListItem[] } = {
   ],
   CHAT: [
     {
-      name: 'sevfact',
-      description: 'Learn a something about my developer!'
+      name: 'hi',
+      description: 'Say hello to 白月 Shiratsuki!'
     }
   ]
 };

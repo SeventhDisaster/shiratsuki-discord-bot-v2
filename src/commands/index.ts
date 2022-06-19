@@ -2,6 +2,7 @@ export * as ping from './support/ping';
 export * as help from './support/help';
 export * as avatar from './support/avatar';
 export * as sevfact from './conversation/sevfact';
+export * as hi from './conversation/hi';
 export * as play from './music/play';
 export * as stop from './music/stop';
 export * as skip from './music/skip';
