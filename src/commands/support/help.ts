@@ -115,7 +115,8 @@ export const execute = (interaction: CommandInteraction, client: Client) => {
       for (const command of categoryCommands) {
         fieldList.push({
           name: `${getEmojiFromKey(key)} - ${command.name}`,
-          value: `${command.description}`
+          value: `${command.description}`,
+          inline: false
         });
       }
     }
