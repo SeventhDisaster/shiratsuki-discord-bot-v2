@@ -85,5 +85,12 @@ const sevfactResponses = [
   'Sev should try to go to sleep earlier.',
   'Sev thinks his friends should try to go to sleep earlier.',
   'He owns a PS5 controller but not an actual PS5',
-  "He's ok I guess."
+  "He's ok I guess.",
+  'Very likely to die from caffeine shock! ☕',
+  'Favorite lipton tea flavor is Earl Gray.',
+  'Very good at forgetting things.',
+  'He is able to stop thinking on command!',
+  'He owns nothing but black socks. Some have white stripes I guess.',
+  "He's learned how to express 'okuyukashisa'... It's too hard to explain so I'll leave it at that.",
+  'Sev has never been hospitalized for any reason.'
 ];
