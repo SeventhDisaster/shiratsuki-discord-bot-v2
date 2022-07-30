@@ -28,7 +28,9 @@ const retrieveSongs = async (interaction: CommandInteraction, url: string) => {
   let songs: Song[] = [];
 
   if (url?.includes('list') && !url.includes('watch')) {
-    const retrieved = await ytpl(url);
+    const retrieved = await ytpl(url, {
+      limit: 1000
+    });
     for (let song of retrieved.items) {
       songs.push({
         requestedBy: interaction.user,
