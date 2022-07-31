@@ -72,7 +72,9 @@ export const player = async (guild: string) => {
   };
 
   audioPlayer.on(AudioPlayerStatus.Idle, () => {
-    song_queue!.songs.shift();
+    if (song_queue) {
+      song_queue?.songs.shift();
+    }
     getNextResource();
   });
 
