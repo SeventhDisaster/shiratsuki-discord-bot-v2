@@ -44,7 +44,7 @@ export const player = async (guild: string) => {
   }
 
   const getNextResource = () => {
-    song_queue = queue.get(guild); // Refetch the queue in case a shuffle has happened
+    song_queue = queue.get(guild) ? queue.get(guild) : song_queue; // Refetch the queue in case a shuffle has happened
     if (!song_queue) {
       queue.delete(guild);
       return;
