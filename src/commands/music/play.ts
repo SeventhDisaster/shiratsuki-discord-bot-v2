@@ -1,6 +1,5 @@
-import { SlashCommandBuilder } from '@discordjs/builders';
 import { joinVoiceChannel } from '@discordjs/voice';
-import { Client, CommandInteraction } from 'discord.js';
+import { Client, CommandInteraction, SlashCommandBuilder } from 'discord.js';
 import ytdl from 'ytdl-core';
 import ytpl from 'ytpl';
 import { createEmbed } from '../../util/embeds';
@@ -74,16 +73,16 @@ export const execute = (interaction: CommandInteraction, client: Client) => {
     );
   }
   const permissions = member?.voice.channel.permissionsFor(member);
-  if (!permissions.has('CONNECT')) {
+  if (!permissions.has('Connect')) {
     interaction.reply('Missing CONNECT permission to that Voice Channel.');
     return;
   }
-  if (!permissions.has('SPEAK')) {
+  if (!permissions.has('Speak')) {
     interaction.reply('Missing SPEAK permission to that Voice Channel.');
     return;
   }
 
-  const url = interaction.options.getString('url');
+  const url = interaction.options.get('url')?.value as string;
   try {
     retrieveSongs(interaction, url || '').then((songs: Song[]) => {
       const serverQueue = queue.get(guild.id);

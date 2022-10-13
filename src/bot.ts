@@ -1,11 +1,11 @@
-import { Client } from 'discord.js';
 import config from './config';
 import * as commandModules from './commands';
+import { Client } from 'discord.js';
 
 const commands = Object(commandModules);
 
 export const client = new Client({
-  intents: ['GUILDS', 'GUILD_MESSAGES', 'DIRECT_MESSAGES', 'GUILD_VOICE_STATES']
+  intents: ['Guilds', 'GuildMessages', 'DirectMessages', 'GuildVoiceStates']
 });
 
 client.once('ready', () => {

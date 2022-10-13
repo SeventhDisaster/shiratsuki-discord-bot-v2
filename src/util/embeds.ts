@@ -1,4 +1,4 @@
-import { MessageAttachment, MessageEmbed } from 'discord.js';
+import { EmbedBuilder } from 'discord.js';
 import { Embed } from '../types/embed.types';
 
 /**
@@ -6,8 +6,8 @@ import { Embed } from '../types/embed.types';
  * @param embedInfo Information to insert into the embed
  * @returns The embed object that must be posted in the relevant channel
  */
-export const createEmbed = (embedInfo: Embed): MessageEmbed => {
-  const embed = new MessageEmbed();
+export const createEmbed = (embedInfo: Embed): EmbedBuilder => {
+  const embed = new EmbedBuilder();
 
   // Set all properties
   embed.setTitle(embedInfo.title);

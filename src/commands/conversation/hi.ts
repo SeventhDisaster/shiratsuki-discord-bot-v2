@@ -92,6 +92,22 @@ const greetTemplates = [
     post: '! Thanks for saying hi!!'
   },
   {
+    pre: 'Yo!',
+    post: "! You're here!!"
+  },
+  {
+    pre: 'Oh!',
+    post: "! I've been waiting for you!"
+  },
+  {
+    pre: '',
+    post: "! I'm your biggest fan!"
+  },
+  {
+    pre: 'きゅん！〜',
+    post: '先輩だ! べ。。別に好きってわけじゃないんだから、バカ〜'
+  },
+  {
     pre: '',
     post: '! Thank you for saying hi!!'
   }

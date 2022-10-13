@@ -1,5 +1,10 @@
 import { SlashCommandBuilder } from '@discordjs/builders';
-import { Client, ColorResolvable, CommandInteraction } from 'discord.js';
+import {
+  APIEmbed,
+  Client,
+  ColorResolvable,
+  CommandInteraction
+} from 'discord.js';
 // Rembember to add the export for this command to commands/index.ts
 
 /**
@@ -27,15 +32,15 @@ export const execute = (interaction: CommandInteraction, client: Client) => {
   }
 
   try {
-    const avatarEmbed = {
+    const avatarEmbed: APIEmbed = {
       title: `${user.username}`,
       description:
         user.id === '601848307093995521'
           ? 'My profile picture was drawn by soresaki!\nCheck out @1100_2299 on Twitter! 🎨'
           : `Displaying ${user}'s profile picture`,
-      color: `#7E47FF` as ColorResolvable,
+      color: 8275967,
       image: {
-        url: `${user.avatarURL({ dynamic: true }) + '?size=2048'}`
+        url: `${user.avatarURL() + '?size=2048'}`
       },
       footer: {
         text: '白月 - Shiratsuki Avatar Viewer'

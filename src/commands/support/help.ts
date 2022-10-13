@@ -107,7 +107,8 @@ const getEmojiFromKey = (key: string): string => {
  */
 export const execute = (interaction: CommandInteraction, client: Client) => {
   const fieldList: EmbedField[] = [];
-  const option: string | null = interaction.options.getString('category');
+  const option: string | null = interaction.options.get('category')
+    ?.value as string;
 
   if (option === 'ALL' || !option) {
     for (let key in commandList) {

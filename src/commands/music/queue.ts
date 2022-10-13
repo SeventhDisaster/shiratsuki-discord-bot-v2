@@ -10,9 +10,9 @@ import {
   VoiceBasedChannel,
   Client,
   CommandInteraction,
+  SlashCommandBuilder,
   EmbedField
 } from 'discord.js';
-import { SlashCommandBuilder } from '@discordjs/builders';
 import ytdl from 'ytdl-core';
 import { createEmbed } from '../../util/embeds';
 // Rembember to add the export for this command to commands/index.ts
@@ -129,7 +129,8 @@ export const execute = (interaction: CommandInteraction, client: Client) => {
     return interaction.reply(`This server currently doesn't have a queue!`);
   }
 
-  const amountToDisplay = interaction.options.getNumber('amount') || 5; // Default to 5 entries
+  const amountToDisplay =
+    (interaction.options.get('amount')?.value as number) || 5; // Default to 5 entries
   const songs = song_queue.songs;
 
   if (!songs.length) {
