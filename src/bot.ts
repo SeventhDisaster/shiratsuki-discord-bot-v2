@@ -1,11 +1,16 @@
 import config from './config';
 import * as commandModules from './commands';
-import { Client } from 'discord.js';
+import { Client, GatewayIntentBits } from 'discord.js';
 
 const commands = Object(commandModules);
 
 export const client = new Client({
-  intents: ['Guilds', 'GuildMessages', 'DirectMessages', 'GuildVoiceStates']
+  intents: [
+    GatewayIntentBits.Guilds,
+    GatewayIntentBits.GuildMessages,
+    GatewayIntentBits.DirectMessages,
+    GatewayIntentBits.GuildVoiceStates
+  ]
 });
 
 client.once('ready', () => {
