@@ -1,6 +1,6 @@
 {
   "name": "shiratsuki-discordbot-v2",
-  "version": "2.2.1",
+  "version": "3.0.1",
   "description": "A personal discord bot.",
   "main": "index.js",
   "scripts": {
