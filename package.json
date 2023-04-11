@@ -33,7 +33,7 @@
     "prettier": "^2.6.2",
     "pretty-quick": "^3.1.3",
     "typescript": "^4.7.3",
-    "ytdl-core": "^4.11.3",
+    "ytdl-core": "^4.9.1",
     "ytpl": "^2.3.0"
   },
   "devDependencies": {
